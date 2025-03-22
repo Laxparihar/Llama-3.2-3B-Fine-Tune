@@ -17,34 +17,37 @@ This repository contains code to fine-tune the **Llama 3B model** using **LoRA**
 Fine-Tuning the Model:
 Prepare your dataset: Ensure the dataset contains columns instruction, input, and output. Update the dataset path in trainer.py.
 
-Run the training script:
-
-python trainer.py
-
-
-Optimizing the Fine-Tuned Model:
-Merge LoRA with the base model: After training, use optimise_model.py to merge the LoRA weights into the base model.
-
-python optimise_model.py
+### Run the training script:
+- Run the training script:
+  ```bash
+  python trainer.py
 
 
-Uploading the Model:
-The fine-tuned model can be uploaded to Hugging Face using the optimise_model.py script. You can modify the Hugging Face repo name and token in the script to push the model to the Model Hub.
+### Optimizing the Fine-Tuned Model:
+- Merge LoRA with the base model: After training, use optimise_model.py to merge the LoRA weights into the base model.
+- Run the optimise_model script:
+  ```bash
+  python optimise_model.py
 
 
-Files Overview:
-trainer.py
-Contains the code for training the Llama model using LoRA, including:
+### Uploading the Model:
+- The fine-tuned model can be uploaded to Hugging Face using the optimise_model.py script. You can modify the Hugging Face repo name and token in the script to push the model to the Model Hub.
 
-Model and tokenizer loading.
 
-Data preprocessing.
+## Files Overview:
+- trainer.py
+  Contains the code for training the Llama model using LoRA, including:
 
-Training loop with PEFT and QLoRA configurations.
+- Model and tokenizer loading.
 
-optimise_model.py
+  Data preprocessing.
+
+  Training loop with PEFT and QLoRA configurations.
+
+  optimise_model.py
 After training, this script merges the LoRA model with the base Llama model and uploads it to Hugging Face.
-
-llama_test.py
+- Run the Test script:
+  ```bash
+  llama_test.py
 This script allows for inference on your fine-tuned model. In the example, it extracts information from a bank statement, but you can customize it for other use cases.
 
