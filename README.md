@@ -40,11 +40,11 @@ Prepare your dataset: Ensure the dataset contains columns instruction, input, an
 
 - Model and tokenizer loading.
 
-  Data preprocessing.
+- Data preprocessing.
 
-  Training loop with PEFT and QLoRA configurations.
+- Training loop with PEFT and QLoRA configurations.
 
-  optimise_model.py
+- optimise_model.py
 After training, this script merges the LoRA model with the base Llama model and uploads it to Hugging Face.
 - Run the Test script:
   ```bash
